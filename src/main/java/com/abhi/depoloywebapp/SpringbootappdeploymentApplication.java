@@ -1,0 +1,13 @@
+package com.abhi.depoloywebapp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringbootappdeploymentApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringbootappdeploymentApplication.class, args);
+	}
+
+}
