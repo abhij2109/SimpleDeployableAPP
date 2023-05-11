@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Setup'){
             steps{
-                git 'https://github.com/abhij2109/SimpleDeployableAPP.git'
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/abhij2109/SimpleDeployableAPP.git']])
             }
         }
     }
