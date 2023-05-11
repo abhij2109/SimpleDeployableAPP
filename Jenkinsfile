@@ -4,10 +4,14 @@ pipeline {
         maven 'Maven-3.9.1'
     }
     stages{
-        stage('Build Maven'){
+        stage('Code Setup'){
             steps{
                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/abhij2109/SimpleDeployableAPP']])
-                bat 'mvn clean install'
+            }
+        }
+        stage('Maven Build Integration'){
+            steps{
+                bat 'mvn clean package'
             }
         }
     }
