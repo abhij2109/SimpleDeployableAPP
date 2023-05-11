@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Code Setup'){
             steps{
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/abhij2109/SimpleDeployableAPP']])
+                git 'https://github.com/abhij2109/SimpleDeployableAPP'
             }
         }
         stage('Maven Build Integration'){
