@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment{
+        PATH = "C:\apache-maven-3.9.1-bin\apache-maven-3.9.1\bin:$PATH"
+    }
     stages{
         stage('Setup'){
             steps{
