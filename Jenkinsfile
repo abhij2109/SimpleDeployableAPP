@@ -14,5 +14,12 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
+        stage('Dockerization'){
+            steps{
+                script{
+                    bat 'docker build -t abhij2109/spring-boot-docker .'
+                }
+            }
+        }
     }
 }
