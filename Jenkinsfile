@@ -21,5 +21,16 @@ pipeline {
                 }
             }
         }
+        stage('Publishing to docker hub'){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhubpwd')]) {
+                        bat 'docker login -u abhij2109 -p ${dockerhubpwd}'
+
+                        bat 'docker push abhij2109/spring-boot-docker'
+                    }
+                }
+            }
+        }
     }
 }
