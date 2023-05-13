@@ -24,7 +24,9 @@ pipeline {
         stage('Publishing to docker hub'){
             steps{
                 script{
-                    withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhubpwd')]) {
+                    withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpassword')]) {
+                        bat 'docker login -u abhij2109 -p ${dockerhubpassword}'
+
                         bat 'docker push abhij2109/spring-boot-docker'
                     }
                 }
